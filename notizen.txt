@@ -1,0 +1,32 @@
+index.html
+^Textdatei
+
+Elemente: <tag> content</tag>  Standalone Element: <tag>
+
+Attribute: <tag att="wert">
+
+
+
+
+
+
+
+
+
+
+BEST PRACTICE:
+    Meta informationen: <meta charset="utf-8">
+    Titel               <title>titel hier</title>
+    innerhalb vom body ist der viewport
+    im html tag lang="de" attribut
+
+
+title = tootlip
+lang = sprache
+id = nur einmal für ein element
+class = für mehrere, aber das wusstest du schon :eyes:
+
+
+barierearmut = bei scr angaben immer auch ein alt attribut
+
+
