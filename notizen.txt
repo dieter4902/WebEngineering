@@ -6,14 +6,6 @@ Elemente: <tag> content</tag>  Standalone Element: <tag>
 Attribute: <tag att="wert">
 
 
-
-
-
-
-
-
-
-
 BEST PRACTICE:
     Meta informationen: <meta charset="utf-8">
     Titel               <title>titel hier</title>
@@ -21,7 +13,7 @@ BEST PRACTICE:
     im html tag lang="de" attribut
 
 
-title = tootlip
+title = tooltip
 lang = sprache
 id = nur einmal für ein element
 class = für mehrere, aber das wusstest du schon :eyes:
@@ -30,3 +22,15 @@ class = für mehrere, aber das wusstest du schon :eyes:
 barierearmut = bei scr angaben immer auch ein alt attribut
 
 
+
+Formulare <form>
+1.nur form elemente
+2.Beschriftungen!
+3.eindeutigkeit
+4.hilfe für den anwender (patterns, feldtypen,...)
+5.erwartungen erfüllen
+
+
+Gestaltung nur in der CSS-Datei!
+style.css -> separates Verzeichnis
+<link href="style.css" rel="stylesheet">
