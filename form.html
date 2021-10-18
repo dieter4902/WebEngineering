@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>abschnitt</legend>
+        <label for="area">textarea</label>
+        <textarea id="area">platzhalter</textarea>
+        <label for="text">einzeiler</label>
+        <input id="text" type="text">
+        <label for="num">nummer:</label>
+        <input id="num" type="number">
+        <label for="email">email</label>
+        <input id="email" type="email">
+        <label for="ü18">über 18?</label>
+        <input id="ü18" type="checkbox">
+
+    </fieldset>
+    <fieldset>
+        <legend>abschnitt 2</legend>
+        <input id="male" type="radio" name="gender" value="m">
+        <label for="male">m</label>
+        <input id="female" type="radio" name="gender" value="w">
+        <label for="female" name="gender">w</label>
+        <input id="other" type="radio" name="gender" value="d">
+        <label for="other">d</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>abschnitt 3</legend>
+        <label for="m">m</label>
+        <input id="m" type="radio" name="gender" value="m">
+        <label for="f" name="gender">w</label>
+        <input id="f" type="radio" name="gender" value="w">
+        <label for="o">other: please specify</label>
+        <input id="o" type="radio" name="gender" value="d"><input type="text" name="other_reason"/>
+    </fieldset>
+
+
+</form>
+</body>
+</html>
