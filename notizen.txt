@@ -34,3 +34,17 @@ Formulare <form>
 Gestaltung nur in der CSS-Datei!
 style.css -> separates Verzeichnis
 <link href="style.css" rel="stylesheet">
+
+selektoren:
+universalselektor:  *
+typselektor:        img zum beispiel
+    pseudoelemente: ::after
+klasse:             .content
+    pseudoklassen:  :hover
+attributselektor:   [alt]
+id:                 #first
+
+<img src="bild,png" alt="Bild" class="content" id="first">
+
+style attribut hat in der eigen geschriebenen html seite nichts zu suchen!
+
