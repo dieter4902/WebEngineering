@@ -10,10 +10,30 @@
     line-height: 1.2
 }
 
+a:nth-of-type(1n) {
+    font-weight: bolder;
+}
+
+
+/*
+1n:jeder
+2n: jeder 2te
+2n+3: jeder 2te ab dem dritten element
+listen beginnen nicht mit 0 sondern mit 1
+ */
+
+
 html {
     font-family: monospace Rachana;
 }
 
 .mdn {
     background-color: hsl(0, 0%, 80%);
+}
+
+
+/*Pseudo-Elemente:*/
+::before{content:"davor";
+    color:hsl(0,100%,50%);
+    display: block;
 }

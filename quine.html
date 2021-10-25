@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>This is the title</title>
+    <style type="text/css"><![CDATA[
+* {
+        display:inline;
+        white-space:pre;
+    }
+    html:last-child {
+        white-space:normal;
+    }
+    html:before  {content:'<html xmlns="http://www.w3.org/1999/xhtml">';}
+    html:after   {content:'</html>';}
+    head:before  {content:'<head>';}
+    head:after   {content:'</head>';}
+    title:before {content:'<title>';}
+    title:after  {content:'</title>';}
+    style:before {content:'<style type="text/css"><![CDATA[';}
+    style:after  {content:']]\00003e</style>';}
+    body:before  {content:'<body/>';position:absolute;left:0;}
+]]></style>
+</head>
+<body/>
+</html>
