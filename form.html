@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <title>Formular</title>
 </head>
 <body>
 <main>
@@ -26,18 +26,14 @@
             <label for="agb">AGB gelesen und akzeptiert?</label>
             <input id="agb" type="checkbox">
 
-            <br>
-            <p>Geschlecht:</p>
-            <label for="male">m</label>
-            <input id="male" type="radio" name="gender" value="m">
+            <label for="gender">Geschlecht:</label>
+            <select name="pets" id="gender">
+                <option value="">--Please choose an option--</option>
+                <option value="m">m</option>
+                <option value="f">w</option>
+                <option value="other">anderes</option>
+            </select>
 
-            <label for="female" name="gender">w</label>
-            <input id="female" type="radio" name="gender" value="w">
-
-            <label for="other">d</label>
-            <input id="other" type="radio" name="gender" value="d">
-
-            <br>
             <label for="range">Drip-level</label>
             <input id="range" type="range" min="1" max="10" value="5">
 
@@ -47,12 +43,18 @@
 
         <fieldset>
             <legend>Bestes Haustier</legend>
-            <label for="cat">Katze</label>
-            <input id="cat" type="radio" name="animal" value="m">
-            <label for="dog" name="animal">Hund</label>
-            <input id="dog" type="radio" name="animal" value="w">
-            <label for="other_animal">Andere</label>
-            <input id="other_animal" type="radio" name="animal" value="d"><input type="text" name="other_animal"/>
+
+            <input list="animals">
+            <datalist id="animals">
+                <option value="Katze">
+                <option value="Hund">
+            </datalist>
+
+        </fieldset>
+        <fieldset>
+            <legend>Abschicken</legend>
+            <input type="submit">
+            <input type="reset">
         </fieldset>
     </form>
 </main>
