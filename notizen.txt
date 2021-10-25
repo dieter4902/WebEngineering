@@ -48,3 +48,31 @@ id:                 #first
 
 style attribut hat in der eigen geschriebenen html seite nichts zu suchen!
 
+
+element anatomie
+content
+padding
+border
+margin
+
+
+Block element 100% vom parent
+umbruch
+
+Inline element
+tatsächlich benötigster
+Raum
+keine zuweisung von Größen möglich
+nebeneinander wenn platz
+
+ersetztes inline element
+e.g. <img>
+grüße zuweisen möglich
+
+display:block|inline|inline-block
+
+<p>bla</p>
+bla: content
+
+
+

@@ -1,0 +1,19 @@
+/* Universal-Selektor*/
+* {
+    color: hsl(0, 100%, 50%);
+}
+
+/*Pseudoklasse*/
+:root {
+    font-family: sand Serif;
+    font-size: 1rem;
+    line-height: 1.2
+}
+
+html {
+    font-family: monospace Rachana;
+}
+
+.mdn {
+    background-color: hsl(0, 0%, 80%);
+}
