@@ -1,7 +1,11 @@
 h1 {
     color: aqua
 }
-
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.2
+}
 img {
     width : 200px;
     height: auto; /*to preserve the aspect ratio of the image*/
