@@ -1,0 +1,22 @@
+Fertig i guess:
+    bestimmen Sie die Grundeinstellungen
+
+    legen sie Farben und Schriften fest
+
+    Deklarieren Sie sinnvolle Variablen
+
+    die Hintergrundfarben von den articles bzw. sections alternieren
+
+it not work?:
+    die Textfarben der Verlinkungen in der navigation alternieren
+
+
+TODO?:
+    die Schriften sind relativ zueinander aufgebaut
+
+    begrenzen sie die Bilder auf die Größen des Elternelementes
+
+    Für die Verlinkungen innerhalb der Navigation gehen Sie wie folgt vor:
+        alle Listenpunkte liegen nebeneinander,
+        die Gesamtbreite aller Listenpunkte nimmt 100% des Elternelementes ein,
+        verwenden Sie hierfür die Funktion calc()
