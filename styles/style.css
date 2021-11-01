@@ -8,6 +8,7 @@
     --bg-color-light: hsla(var(--main-hue), 100%, 90%, 1);
     --li-color-odd: red;
     --li-color-even: #CFAEE9;
+    --margin: 16px;
 }
 
 h1 {
@@ -47,13 +48,15 @@ article:nth-child(even) {
 li:nth-child(odd) {
     color: var(--li-color-odd);
     display: inline-block;
-    width: calc(99% / 3);
+    width: calc((100% - var(--margin)) / 3);
+    text-align: center;
 }
 
 li:nth-child(even) {
     color: var(--li-color-even); /*it not work, why?*/
     display: inline-block;
-    width: calc(99% / 3);
+    width: calc((100% - var(--margin)) / 3);
+    text-align: center;
 }
 
 a {

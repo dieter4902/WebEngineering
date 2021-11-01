@@ -11,11 +11,10 @@ Fertig i guess:
 
     begrenzen sie die Bilder auf die Größen des Elternelementes
 
-TODO?:
     die Schriften sind relativ zueinander aufgebaut
-
-
     Für die Verlinkungen innerhalb der Navigation gehen Sie wie folgt vor:
         alle Listenpunkte liegen nebeneinander,
         die Gesamtbreite aller Listenpunkte nimmt 100% des Elternelementes ein,
         verwenden Sie hierfür die Funktion calc()
+
+TODO?:
