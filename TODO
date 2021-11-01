@@ -7,14 +7,13 @@ Fertig i guess:
 
     die Hintergrundfarben von den articles bzw. sections alternieren
 
-it not work?:
     die Textfarben der Verlinkungen in der navigation alternieren
 
+    begrenzen sie die Bilder auf die Größen des Elternelementes
 
 TODO?:
     die Schriften sind relativ zueinander aufgebaut
 
-    begrenzen sie die Bilder auf die Größen des Elternelementes
 
     Für die Verlinkungen innerhalb der Navigation gehen Sie wie folgt vor:
         alle Listenpunkte liegen nebeneinander,
