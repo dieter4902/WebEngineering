@@ -13,6 +13,33 @@
     --margin: 16px;
 }
 
+ul {
+    background: gray;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    gap: 2%;
+    height: 23em;
+}
+
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 2%;
+}
+
+article {
+    text-align: center;
+}
+
+main > -article:last-of-type {
+    flex-grow: 2;
+}
+
 h1 {
     font-size: 2rem;
     width: 50%;

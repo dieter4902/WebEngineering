@@ -76,3 +76,24 @@ bla: content
 
 
 
+
+(nav>ul) nur direkten kinder
+
+(nav ul) alle ul kinder
+
+
+flexconteiner
+display:flex, container spezifizieren
+
+1.flex-direction: row|column
+=> bestimmt die achsen
+flex-wrap
+2.flex-flow:row nowrap;
+3.justify-content => alle items werden an ihrer achse zentriert
+3.align-items: Ausrichtung nebenachse
+
+(4. evtl.)align-content:(nur bei mehrzeiligen containern) ausrichtung nebenachse
+        also wrap setzen!
+
+properties im container gelten für alle Flexitems gleich
+
