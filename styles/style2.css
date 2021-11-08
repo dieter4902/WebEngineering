@@ -15,25 +15,16 @@
 
 @media all and (min-width: 540px) {
     nav {
-        background: red
-    }
-
-    main {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-content: center;
-        gap: 2%;
+        background: blueviolet;
     }
 
 
     ul {
         display: flex;
-        justify-content: space-between;
+        flex-flow: row wrap;
+        justify-content: center;
         align-content: center;
-        align-items: center;
         gap: 2%;
-        height: 23em;
     }
 }
 
@@ -44,37 +35,23 @@
 
     ul {
         display: flex;
-        justify-content: space-between;
+        flex-flow: column nowrap;
+        justify-content: center;
         align-content: center;
         align-items: center;
         gap: 2%;
-        height: 23em;
     }
 }
 
-article {
-    text-align: center;
+li{
+    flex-grow: 1;
 }
 
-main > -article:last-of-type {
-    flex-grow: 2;
+ul{
+    height: 100px;
 }
 
 li {
-    display: inline-block;
-    /*width: calc((100% - var(--margin)) / 3);*/
-    /*text-align: center;*/
+    list-style: none
 }
 
-li:nth-child(odd) {
-    color: var(--li-color-odd);
-}
-
-li:nth-child(even) {
-    color: var(--li-color-even);
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
