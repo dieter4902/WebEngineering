@@ -12,26 +12,18 @@ h1 {
     text-align: center;
 }
 
-@media all and (min-width: 540px) {
-    ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        gap: 2%;
-    }
+nav>ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
 }
 
-@media all and (max-width: 541px) {
-    ul {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2%;
-    }
+li{
+    flex: 1 0 23em;
 }
+
 
 a:active {
     color: blue;
@@ -50,9 +42,3 @@ a {
 ul {
     height: 100px;
 }
-
-li {
-    flex-grow: 1;
-    list-style: none
-}
-
