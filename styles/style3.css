@@ -60,6 +60,9 @@ nav {
     display: grid;
     grid-template-rows: 0fr 1fr;
     background: #CFAEE9;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 #porp{
     grid-area: item1;
