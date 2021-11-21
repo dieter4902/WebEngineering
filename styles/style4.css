@@ -50,12 +50,7 @@ article:nth-child(even) {
 
 main {
     display: grid;
-    grid-template-areas:
-        ". . ."
-        "item1 item2 item3";
-    grid-gap: 10px;
 }
-
 
 nav {
     display: grid;
@@ -66,19 +61,39 @@ nav {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 605px);
-    justify-items: start;
+    grid-template-columns: repeat(3, 32%);
+    justify-items: center;
     grid-gap: 10px;
 }
 
-#porp {
-    grid-area: item1;
+@media all and (min-width: 540px) {
+    main {
+        grid-template-areas:
+            "item1 item2 item3";
+        grid-gap: 10px;
+        padding-top: 10px;
+    }
+
+    #porp {
+        grid-area: item1;
+    }
+
+    #chonk {
+        grid-area: item2;
+    }
+
+    #MONKE {
+        grid-area: item3;
+    }
 }
 
-#chonk {
-    grid-area: item2;
-}
+@media all and (max-width: 540px) {
 
-#MONKE {
-    grid-area: item3;
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, fit-content(1fr));
+        grid-row-gap: 10px;
+        padding-top: 10px;
+    }
 }
