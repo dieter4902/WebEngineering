@@ -14,10 +14,14 @@ function checkPassword(password) {
     if (password === null || typeof password === "undefined") {
         alert("abgebrochen")
     } else if (password === "") {
-        alert("empty");
+        alert("leer");
     } else if (password.length >= 8) {
         alert("richtig");
     } else {
         alert("falsch")
     }
+}
+
+function lostFocus() {
+    printPassword();
 }
