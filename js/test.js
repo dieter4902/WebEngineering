@@ -6,7 +6,8 @@
     function printPassword() {
         const passwd = document.getElementById("password").value;
         console.log(passwd);
-        checkPassword(passwd)
+        //checkPassword(passwd);
+        getAllElements();
     }
 
     function checkPassword(password) {
@@ -23,6 +24,27 @@
 
     function lostFocus() {
         printPassword();
+    }
+
+
+    function getAllElements() {
+        var elements = document.getElementsByTagName("input");
+        for (let i = 0; i < elements.length; i++) {
+            console.log(elements[i].value);
+        }
+        var elements = document.getElementsByTagName("textarea");
+        for (let i = 0; i < elements.length; i++) {
+            console.log(elements[i].value);
+        }
+        var elements = document.getElementsByTagName("select");
+        for (let i = 0; i < elements.length; i++) {
+            console.log(elements[i].value);
+        }
+        var elements = document.getElementsByTagName("datalist");
+        for (let i = 0; i < elements.length; i++) {
+            console.log(elements[i].value);
+        }
+
     }
 
 }
