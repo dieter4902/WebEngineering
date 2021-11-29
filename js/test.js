@@ -3,13 +3,13 @@
 {
     "use strict";
 
-    /*document.onload = document.getElementById("submit").click(function (event) {
+    let submitButton = document.querySelector("[type=submit]");
+    submitButton.addEventListener("click", function (event) {
         event.preventDefault();
-        submit();
-    })
-*/
-    function submit() {
+        send();
+    }, false);
 
+    function send() {
         getAllElements();
         printPassword();
     }
@@ -18,7 +18,6 @@
         const passwd = document.getElementById("password").value;
         console.log(passwd);
         checkPassword(passwd);
-        getAllElements();
     }
 
     function checkPassword(password) {
@@ -39,7 +38,7 @@
 
 
     function getAllElements() {
-        var elements = document.querySelectorAll("input,textara,select,datalist");
+        const elements = document.querySelectorAll("input,textarea,select,datalist");
         elements.forEach(i => console.log(i.value));
     }
 
