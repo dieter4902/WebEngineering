@@ -5,5 +5,12 @@
 }
 
 function printPassword() {
-    console.log(document.getElementById("password").value);
+    const passwd = document.getElementById("password").value;
+    console.log(passwd);
+    checkPassword(passwd)
+}
+
+function checkPassword(password) {
+    const passwdEmpty = password === "";
+    alert(passwdEmpty ? "leer" : "richtig")
 }
