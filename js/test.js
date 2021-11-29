@@ -3,11 +3,11 @@
 {
     "use strict";
 
-    document.onload = document.getElementById("submit").click(function (event) {
+    /*document.onload = document.getElementById("submit").click(function (event) {
         event.preventDefault();
         submit();
     })
-
+*/
     function submit() {
 
         getAllElements();
@@ -18,6 +18,7 @@
         const passwd = document.getElementById("password").value;
         console.log(passwd);
         checkPassword(passwd);
+        getAllElements();
     }
 
     function checkPassword(password) {
@@ -38,14 +39,8 @@
 
 
     function getAllElements() {
-        const inputTags = Array.from(document.getElementsByTagName("input"));
-        const textareaTags = Array.from(document.getElementsByTagName("textarea"));
-        const selectTags = Array.from(document.getElementsByTagName("select"));
-        const datalistTags = Array.from(document.getElementsByTagName("datalist"));
-        const elements = inputTags.concat(textareaTags, selectTags, datalistTags);
-        for (let i = 0; i < elements.length; i++) {
-            console.log(elements[i].value);
-        }
+        var elements = document.querySelectorAll("input,textara,select,datalist");
+        elements.forEach(i => console.log(i.value));
     }
 
 }
