@@ -11,6 +11,11 @@ function printPassword() {
 }
 
 function checkPassword(password) {
-    const passwdEmpty = password === "";
-    alert(passwdEmpty ? "leer" : "richtig")
+    if (password === "") {
+        alert("empty");
+    } else if (password.length > 8) {
+        alert("richtig");
+    } else {
+        alert("i dont even want to know what you did there :eyes:")
+    }
 }
