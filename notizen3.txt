@@ -1,0 +1,43 @@
+position: static/relative/absolute/fixed/sticky
+    -> art der Positionierung
+
+top/right/bottom/left
+    ->Ort,neue Positipon(Wo)
+
+
+
+relative
+-bleibt im Textfluss
+-andere Elemente respektieren den ursprünglichen Platz
+
+
+absolute
+-aus dem Textfluss
+-schrumpft auf content
+-andere Elemente sehen es nicht mehr
+-Überlappungen
+-Z-Achse
+-Verschiebung:
+    zum nächst höheren Element welches ein position element besitzt(nicht static ist), wenn keines, dann zum root element
+
+
+fixed
+-aus dem Textfluss
+-schrumpft auf content
+-andere Elemente sehen es nicht mehr
+-Überlappungen
+-Z-Achse
+Verschiebung:
+    zum root Element
+
+
+sticky
+-aus dem Textfluss
+-schrumpft auf content
+-andere Elemente sehen es nicht mehr
+-Überlappungen
+-Z-Achse
+-relative + fixed
+Verschiebung:
+    offset z.B. top:0
+    ->dann fixed

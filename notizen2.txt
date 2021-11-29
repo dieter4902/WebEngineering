@@ -20,5 +20,4 @@ grid items
 4. ausrichtung der items im container(optional)
 
 
-
-<meta name="viewport" content="
+<meta name="viewport" content="width=device-width">
