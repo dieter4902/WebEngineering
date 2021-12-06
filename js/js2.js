@@ -1,6 +1,6 @@
 {
     "use strict";
-
+    
     let submitButton = document.querySelector("[type=submit]");
     submitButton.addEventListener("click", function (event) {
         event.preventDefault();
@@ -25,17 +25,23 @@
 
     function printPassword() {
         const passwd = document.getElementById("password").value;
+        const pwMessage = document.getElementById("passwordMessage");
+        const pwPic = document.getElementById("passwordPicture");
         console.log(passwd);
+        /* idk vielleicht sagt sie in der Vorlesung, dass wir das aus nem Directory lesen sollen? */
+        var passwdPics = ['img/porpoises.jpg', 'img/chonk_chart.png'];
         let message;
         if (passwd === null || typeof passwd === "undefined") {
             message = "abgebrochen";
-        } else if (password === "") {
+        } else if (passwd === "") {
             message = "leer";
-        } else if (password.length >= 8) {
+        } else if (passwd.length >= 8) {
             message = "richtig";
+            pwPic.src = passwdPics[Math.floor(Math.random()*passwdPics.length)];
         } else {
             message = "falsch";
         }
+        pwMessage.innerHTML = message;
         console.log(message)
     }
 
