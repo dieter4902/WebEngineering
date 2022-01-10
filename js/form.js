@@ -15,20 +15,34 @@
     querySelectorAll()
     object collections */
     
+    let allElements = document.querySelectorAll("input,textarea,select");
+
+    //printet alle Elemente
+    const printAllElements = () => {
+        console.log("All Values:");
+        allElements.forEach(i => console.log(i.id + i + ": " + i.value));
+    }
+
+    //printet alle Elemente, welche einen value haben
+    const printValueElements = () => {
+        console.log("Filled Values:");
+        allElements.forEach(i => {
+            if(i.value != undefined && i.value != "" && i.value != null) {
+                console.log(i.id + ": " + i.value);
+            } 
+        });
+    };
+    printAllElements();
+    printValueElements();
+
+    
 
 
 
 
 
 
-
-
-
-
-
-
-
-    // id
+/*     // id
     let firstName = document.getElementById("fn");
     console.log(firstName);
     console.log(firstName.parentElement);
@@ -39,8 +53,8 @@
 
     // TagName
     let allP = document.getElementsByTagName("p");
-    console.log(allP, allP.length);
-    console.log(allP[0].innerHTML);
+    
+
 
     // className
     let headlines = document.getElementsByClassName("head-line");
@@ -99,7 +113,7 @@
 /*     pic.addEventListener("click", function(e){
                                     sky("happy");
                                     console.log(e,e.target);
-                                    },false); */
+                                    },false); 
 
     const changePic = mood => {
         if(mood === "g"){
@@ -147,6 +161,6 @@
     submit.addEventListener("click", function(e){
                                         changePic(moodCheck());
                                         thanks(firstName.value);
-                                        e.preventDefault();}, false);
+                                        e.preventDefault();}, false); */
 
 }

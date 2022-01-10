@@ -11,10 +11,10 @@
     <form id="form">
         <fieldset>
             <legend>Tier</legend>
-            <label for="area">Lieblings-Chonks:</label>
-            <textarea id="area"></textarea>
-            <label for="text">Lieblingstier:</label>
-            <input id="text" type="text">
+            <label for="lieblingsAffe">Lieblings-Affe:</label>
+            <textarea id="lieblingsAffe"></textarea>
+            <label for="lieblingstier">Lieblingstier:</label>
+            <input id="lieblingstier" type="text">
 
         </fieldset>
         <fieldset>
@@ -22,8 +22,8 @@
             <label for="name">Name:</label>
             <input id="name" type="text">
 
-            <label for="num">Alter:</label>
-            <input id="num" type="number" min="0">
+            <label for="alter">Alter:</label>
+            <input id="alter" type="number" min="0">
 
             <label for="email">E-mail:</label>
             <input id="email" type="email">
@@ -39,18 +39,18 @@
                 <option value="other">anderes</option>
             </select>
 
-            <label for="range">Drip-level:</label>
-            <input id="range" type="range" min="1" max="10" value="5">
+            <label for="mentalAge">Geistiges Alter</label>
+            <input id="mentalAge" type="range" min="1" max="100" value="50">
 
-            <label for="color">beste Farbe:</label>
-            <input id="color" type="color">
+            <label for="fColor">Beste Farbe:</label>
+            <input id="fColor" type="color">
         </fieldset>
 
         <fieldset>
             <legend>Bestes Haustier:</legend>
 
-            <label for="favAnimal">Bestes Haustier:</label>
-            <input id="favAnimal" list="animals">
+            <label for="fAnimal">Bestes Haustier:</label>
+            <input id="fAnimal" list="animals">
             <datalist id="animals">
                 <option value="Katze">
                 <option value="Hund">
@@ -67,8 +67,8 @@
         </fieldset>
         <fieldset>
             <legend>Abschicken</legend>
-            <input type="submit">
-            <input type="reset">
+            <input id="submit" type="submit">
+            <input id="reset" type="reset">
         </fieldset>
     </form>
 </main>
