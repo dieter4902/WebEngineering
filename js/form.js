@@ -16,26 +16,54 @@
     object collections */
     
     let allElements = document.querySelectorAll("input,textarea,select");
-
     //printet alle Elemente
     const printAllElements = () => {
-        console.log("All Values:");
+        console.log("All values:");
         allElements.forEach(i => console.log(i.id + i + ": " + i.value));
     }
 
     //printet alle Elemente, welche einen value haben
     const printValueElements = () => {
-        console.log("Filled Values:");
+        console.log("Filled values:");
         allElements.forEach(i => {
             if(i.value != undefined && i.value != "" && i.value != null) {
                 console.log(i.id + ": " + i.value);
             } 
         });
     };
+
+    const printValidValueElements = () => {
+        console.log("Filled valid values:");
+        allElements.forEach(i => {
+            if(i.value != undefined && i.value != "" && i.value != null) {
+                if(i.validity.valid) {
+                    console.log(i.id + ": " + i.value);
+                }
+              /*   if(validity.valueMissing) return "Bitte Feld ausfüllen!";
+                if(validity.tooShort) return "Zu wenige Zeichen!";
+                if(validity.rangeUnderflow) return "Du bist zu jung!";  */
+        
+/*                 if(validity.valueMissing){ 
+                    showMessage(field);
+                } */
+            } 
+        });
+    };
     printAllElements();
     printValueElements();
+    printValidValueElements();
 
-    
+    //guckt, ob das Passwort valid ist und printet es auf die Konsole, wenn ja
+    let passwordButton = document.getElementById("btn");
+    passwordButton.addEventListener("click", function(){
+        console.clear();
+        const passwd = document.getElementById("password");
+        if(passwd.validity.valid) {
+            console.log(passwd.value);
+        } else {
+            console.log("bad password");
+        }
+    });
 
 
 

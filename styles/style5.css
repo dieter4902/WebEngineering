@@ -29,3 +29,11 @@ img, iframe {
     max-width: 100%;
     height: auto; /*to preserve the aspect ratio of the image*/
 }
+
+textarea:invalid, input:invalid{
+    border: 1px solid hsla(0,100%,50%,1);
+}
+
+textarea:valid, input:valid:not([type=submit]){
+	border: 1px solid hsla(134,100%,50%,1);
+}

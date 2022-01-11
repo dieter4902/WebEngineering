@@ -12,24 +12,24 @@
         <fieldset>
             <legend>Tier</legend>
             <label for="lieblingsAffe">Lieblings-Affe:</label>
-            <textarea id="lieblingsAffe"></textarea>
+            <textarea id="lieblingsAffe" required></textarea>
             <label for="lieblingstier">Lieblingstier:</label>
-            <input id="lieblingstier" type="text">
+            <input id="lieblingstier" type="text" required pattern="[A-Za-zÄÖÜäöüß]+">
 
         </fieldset>
         <fieldset>
             <legend>Zur Person</legend>
             <label for="name">Name:</label>
-            <input id="name" type="text">
+            <input id="name" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
 
             <label for="alter">Alter:</label>
-            <input id="alter" type="number" min="0">
+            <input id="alter" type="number" min="0" required pattern="[/d]+">
 
             <label for="email">E-mail:</label>
-            <input id="email" type="email">
+            <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
 
             <label for="agb">AGB gelesen und akzeptiert?</label>
-            <input id="agb" type="checkbox">
+            <input id="agb" type="checkbox" required>
 
             <label for="gender">Geschlecht:</label>
             <select name="gen" id="gender" multiple>
@@ -49,8 +49,8 @@
         <fieldset>
             <legend>Bestes Haustier:</legend>
 
-            <label for="fAnimal">Bestes Haustier:</label>
-            <input id="fAnimal" list="animals">
+            <label for="fHAnimal">Bestes Haustier:</label>
+            <input id="fHAnimal" list="animals" required pattern="[A-Za-zÄÖÜäöüß]+">
             <datalist id="animals">
                 <option value="Katze">
                 <option value="Hund">
@@ -60,7 +60,7 @@
 
         <fieldset>
             <label for="password">Password:</label>
-            <input type="password" id="password">
+            <input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
             <button type="button" id="btn">check password</button>
             <p id="passwordMessage"></p>
             <img id="passwordPicture">
