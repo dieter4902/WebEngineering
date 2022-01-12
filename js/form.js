@@ -14,7 +14,7 @@
     getElementsByName()
     querySelectorAll()
     object collections */
-    
+
     let allElements = document.querySelectorAll("input,textarea,select");
     //printet alle Elemente
     const printAllElements = () => {
@@ -26,169 +26,204 @@
     const printValueElements = () => {
         console.log("Filled values:");
         allElements.forEach(i => {
-            if(i.value != undefined && i.value != "" && i.value != null) {
+            if (i.value != undefined && i.value != "" && i.value != null) {
                 console.log(i.id + ": " + i.value);
-            } 
+            }
         });
     };
 
-    const printValidValueElements = () => {
+    let printValidValueElements = () => {
         console.log("Filled valid values:");
+        let check = true;
         allElements.forEach(i => {
-            if(i.value != undefined && i.value != "" && i.value != null) {
-                if(i.validity.valid) {
+            if (i.value != undefined && i.value != "" && i.value != null) {
+                if (i.validity.valid) {
                     console.log(i.id + ": " + i.value);
                 }
-              /*   if(validity.valueMissing) return "Bitte Feld ausfüllen!";
-                if(validity.tooShort) return "Zu wenige Zeichen!";
-                if(validity.rangeUnderflow) return "Du bist zu jung!";  */
-        
-/*                 if(validity.valueMissing){ 
-                    showMessage(field);
-                } */
-            } 
+                else if (i.validity.valueMissing) {
+                    console.log(i.id + ": " + "Bitte Feld ausfüllen!");
+                }
+                else if (i.validity.tooShort) {
+                    console.log(i.id + ": " + "Mehr zeichen erforderlich!");
+                }
+                else if (i.validity.rangeUnderflow) {
+                    console.log(i.id + ": " + "Du bist zu jung!");
+                }
+            } else {
+                if (i.type === "submit" || i.type === "reset") {
+                } else {
+                    console.log(i.id + ": " + "Falsche Eingabe!");
+                    check = false;
+                }
+            }
         });
+        return check;
     };
     printAllElements();
     printValueElements();
-    printValidValueElements();
+
 
     //guckt, ob das Passwort valid ist und printet es auf die Konsole, wenn ja
     let passwordButton = document.getElementById("btn");
-    passwordButton.addEventListener("click", function(){
+    passwordButton.addEventListener("click", function () {
         console.clear();
         const passwd = document.getElementById("password");
-        if(passwd.validity.valid) {
+        if (passwd.validity.valid) {
             console.log(passwd.value);
         } else {
             console.log("bad password");
         }
     });
 
-
-
-
-
-
-/*     // id
-    let firstName = document.getElementById("fn");
-    console.log(firstName);
-    console.log(firstName.parentElement);
-
-    // querySelector
-    let pic = document.querySelector("img");
-    console.log(pic);
-
-    // TagName
-    let allP = document.getElementsByTagName("p");
-    
-
-
-    // className
-    let headlines = document.getElementsByClassName("head-line");
-    console.log(headlines);
-    for(let i=0; i<headlines.length; i++){
-        console.log(headlines[i].childNodes);
-        console.log(headlines[i].childNodes[0]);
-    }
-
-    // name
-    let allRadios = document.getElementsByName("mood");
-    allRadios.forEach(radio => {
-        console.log(radio.value);
-    });
-
-    // querySelectorAll
-    let allText = document.querySelectorAll("[type=text]");
-    console.log(allText);
-
-    console.clear();
-
-    // ***************************************
-    const changeImageOnce = () => pic.src = "sonneSad.jpg";
-
-    // Funktion darf nur referenziert werden!
-    // pic.addEventListener("click",changeImageOnce, false);
-
-    // console.log(pic.src);
-
-    const changeImage = () => {
-        if(pic.alt === "Die Sonne :-)"){
-            pic.alt = ":("
-            pic.src = "sonneSad.jpg";
-        }
-        else{
-            pic.alt = "Die Sonne :-)"
-            pic.src = "sonne.png";
-        }
-    };
-
-    // pic.addEventListener("click", changeImage, false);
-
-    // HTML und CSS: Verwendung der classList-Methoden sorgt für Separation of Concerns!
-    const changeStyle = () => pic.classList.toggle("invert");
-    pic.addEventListener("mouseover",changeStyle,false);
-    pic.addEventListener("mouseleave",changeStyle,false);
-
-    // Argumente übergeben
-    const sky = mood => {
-        if(mood==="happy")
-            pic.parentElement.className="happy";
-        else
-            pic.parentElement.className="sad";
-    };
-    // über den addEventListener können beliebig viele Funktionen hinzugefügt werden
-/*     pic.addEventListener("click", function(e){
-                                    sky("happy");
-                                    console.log(e,e.target);
-                                    },false); 
-
-    const changePic = mood => {
-        if(mood === "g"){
-            pic.parentElement.className = "happy";
-            pic.src = "Sonne.png";
-            pic.alt = "Die Sonne :-)";
-        }
-        else{
-            pic.parentElement.className = "sad";
-            pic.src = "sonneSad.jpg";
-            pic.alt = ":(";
-        }
-
-    };
-
-    // Values der radios auslesen
-    const moodCheck = () => {
-        let mood = "g";
-        allRadios.forEach(radio => {
-            if(radio.checked)
-                mood = radio.value;
-        });
-        return mood;
-    };
-
-    // console.log(moodCheck());
-
     let form = document.querySelector("form");
-    // Neue Elemente in das Dokument einfügen
-    const thanks = user => {
-        // 1. Element erzeugen
-        let message = document.createElement("p");
-        // 2. Kindknoten oder Attribute erzeugen und befüllen
-        let text = document.createTextNode("Danke " + user);
-        // 3. beide zusammenführen
-        message.appendChild(text);
-        // 4. Neues Element in das Dokument einfügen
-        form.appendChild(message);
-        // evtl. auf <p> mit lastChildNode prüfen und so mehrfaches Einfügen verhindern.
-    };
-   
-    
-    let submit = document.querySelector("[type=submit]");
 
-    submit.addEventListener("click", function(e){
-                                        changePic(moodCheck());
-                                        thanks(firstName.value);
-                                        e.preventDefault();}, false); */
+    let submitButton = document.querySelector("[type=submit]");
+    submitButton.addEventListener("click", function (event) {
+        console.clear();
+        if (printValidValueElements() == false) {
+            let message = document.createElement("p");
+            // 2. Kindknoten oder Attribute erzeugen und befüllen
+            let text = document.createTextNode("Falsch");
+            // 3. beide zusammenführen
+            message.appendChild(text);
+            // 4. Neues Element in das Dokument einfügen
+            form.appendChild(message);
+            // evtl. auf <p> mit lastChildNode prüfen und so mehrfaches Einfügen verhindern.
+            event.preventDefault();
+        } else {
+            let message = document.createElement("p");
+            // 2. Kindknoten oder Attribute erzeugen und befüllen
+            let text = document.createTextNode("Richtig");
+            // 3. beide zusammenführen
+            message.appendChild(text);
+            // 4. Neues Element in das Dokument einfügen
+            form.appendChild(message);
+        }
+    }, false);
+
+
+
+
+
+    /*     // id
+        let firstName = document.getElementById("fn");
+        console.log(firstName);
+        console.log(firstName.parentElement);
+    
+        // querySelector
+        let pic = document.querySelector("img");
+        console.log(pic);
+    
+        // TagName
+        let allP = document.getElementsByTagName("p");
+        
+    
+    
+        // className
+        let headlines = document.getElementsByClassName("head-line");
+        console.log(headlines);
+        for(let i=0; i<headlines.length; i++){
+            console.log(headlines[i].childNodes);
+            console.log(headlines[i].childNodes[0]);
+        }
+    
+        // name
+        let allRadios = document.getElementsByName("mood");
+        allRadios.forEach(radio => {
+            console.log(radio.value);
+        });
+    
+        // querySelectorAll
+        let allText = document.querySelectorAll("[type=text]");
+        console.log(allText);
+    
+        console.clear();
+    
+        // ***************************************
+        const changeImageOnce = () => pic.src = "sonneSad.jpg";
+    
+        // Funktion darf nur referenziert werden!
+        // pic.addEventListener("click",changeImageOnce, false);
+    
+        // console.log(pic.src);
+    
+        const changeImage = () => {
+            if(pic.alt === "Die Sonne :-)"){
+                pic.alt = ":("
+                pic.src = "sonneSad.jpg";
+            }
+            else{
+                pic.alt = "Die Sonne :-)"
+                pic.src = "sonne.png";
+            }
+        };
+    
+        // pic.addEventListener("click", changeImage, false);
+    
+        // HTML und CSS: Verwendung der classList-Methoden sorgt für Separation of Concerns!
+        const changeStyle = () => pic.classList.toggle("invert");
+        pic.addEventListener("mouseover",changeStyle,false);
+        pic.addEventListener("mouseleave",changeStyle,false);
+    
+        // Argumente übergeben
+        const sky = mood => {
+            if(mood==="happy")
+                pic.parentElement.className="happy";
+            else
+                pic.parentElement.className="sad";
+        };
+        // über den addEventListener können beliebig viele Funktionen hinzugefügt werden
+    /*     pic.addEventListener("click", function(e){
+                                        sky("happy");
+                                        console.log(e,e.target);
+                                        },false); 
+    
+        const changePic = mood => {
+            if(mood === "g"){
+                pic.parentElement.className = "happy";
+                pic.src = "Sonne.png";
+                pic.alt = "Die Sonne :-)";
+            }
+            else{
+                pic.parentElement.className = "sad";
+                pic.src = "sonneSad.jpg";
+                pic.alt = ":(";
+            }
+    
+        };
+    
+        // Values der radios auslesen
+        const moodCheck = () => {
+            let mood = "g";
+            allRadios.forEach(radio => {
+                if(radio.checked)
+                    mood = radio.value;
+            });
+            return mood;
+        };
+    
+        // console.log(moodCheck());
+    
+        let form = document.querySelector("form");
+        // Neue Elemente in das Dokument einfügen
+        const thanks = user => {
+            // 1. Element erzeugen
+            let message = document.createElement("p");
+            // 2. Kindknoten oder Attribute erzeugen und befüllen
+            let text = document.createTextNode("Danke " + user);
+            // 3. beide zusammenführen
+            message.appendChild(text);
+            // 4. Neues Element in das Dokument einfügen
+            form.appendChild(message);
+            // evtl. auf <p> mit lastChildNode prüfen und so mehrfaches Einfügen verhindern.
+        };
+       
+        
+        let submit = document.querySelector("[type=submit]");
+    
+        submit.addEventListener("click", function(e){
+                                            changePic(moodCheck());
+                                            thanks(firstName.value);
+                                            e.preventDefault();}, false); */
 
 }
