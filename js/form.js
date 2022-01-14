@@ -26,27 +26,23 @@
     const printValueElements = () => {
         console.log("Filled values:");
         allElements.forEach(i => {
-            if (i.value != undefined && i.value != "" && i.value != null) {
+            if (i.value !== undefined && i.value !== "" && i.value != null) {
                 console.log(i.id + ": " + i.value);
             }
         });
     };
 
     let printValidValueElements = () => {
-        console.log("Filled valid values:");
         let check = true;
         allElements.forEach(i => {
-            if (i.value != undefined && i.value != "" && i.value != null) {
+            if (i.value !== undefined && i.value !== "" && i.value != null) {
                 if (i.validity.valid) {
                     console.log(i.id + ": " + i.value);
-                }
-                else if (i.validity.valueMissing) {
+                } else if (i.validity.valueMissing) {
                     console.log(i.id + ": " + "Bitte Feld ausfüllen!");
-                }
-                else if (i.validity.tooShort) {
+                } else if (i.validity.tooShort) {
                     console.log(i.id + ": " + "Mehr zeichen erforderlich!");
-                }
-                else if (i.validity.rangeUnderflow) {
+                } else if (i.validity.rangeUnderflow) {
                     console.log(i.id + ": " + "Du bist zu jung!");
                 }
             } else {
@@ -80,7 +76,7 @@
     let submitButton = document.querySelector("[type=submit]");
     submitButton.addEventListener("click", function (event) {
         console.clear();
-        if (printValidValueElements() == false) {
+        if (printValidValueElements() === false) {
             let message = document.createElement("p");
             // 2. Kindknoten oder Attribute erzeugen und befüllen
             let text = document.createTextNode("Falsch");
@@ -98,11 +94,24 @@
             message.appendChild(text);
             // 4. Neues Element in das Dokument einfügen
             form.appendChild(message);
+
+            clearForm();
+            event.preventDefault();
+
         }
     }, false);
 
-
-
+    let clearForm = () => {
+        allElements.forEach(i => {
+            if (i.type === "submit" || i.type === "reset")
+                return; //reset und submit button sollen nicht geleert werden
+            if (i.type === "checkbox") {
+                i.checked = false;
+                return;
+            }
+            i.value = "";
+        });
+    }
 
 
     /*     // id
