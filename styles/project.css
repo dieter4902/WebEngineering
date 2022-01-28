@@ -1,0 +1,30 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2rem;
+    width: 50%;
+    border: 1px solid;
+    text-align: center;
+    margin: auto;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+img, iframe {
+    max-width: 100%;
+    height: auto; /*to preserve the aspect ratio of the image*/
+}
