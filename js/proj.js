@@ -1,6 +1,26 @@
 {
     "use strict";
 
+    let formDiv = document.getElementById("formDiv");
+    let loginDiv = document.getElementById("loginDiv");
+    toggle();
+
+
+    let loginButton = document.querySelector("[id=login]");
+    loginButton.addEventListener("click", function () {
+        toggle();
+    });
+
+    let registerButton = document.querySelector("[id=register]");
+    registerButton.addEventListener("click", function () {
+        toggle();
+    });
+
+    function toggle() {
+        formDiv.hidden = !formDiv.hidden;
+        loginDiv.hidden = !formDiv.hidden;
+    }
+
     let allElements = document.querySelectorAll("input,textarea,select");
     //printet alle Elemente
     const printAllElements = () => {
@@ -60,10 +80,10 @@
     let form = document.querySelector("form");
 
     let createDOM = (ausgabe) => {
-        if(form.lastChild.id === "ausgabe") {
-/*             let text = document.createTextNode("Richtig"); */
+        if (form.lastChild.id === "ausgabe") {
+            /*             let text = document.createTextNode("Richtig"); */
             form.lastChild.lastChild.textContent = ausgabe;
-          /*   form.lastChild.appendChild(text); */
+            /*   form.lastChild.appendChild(text); */
         } else {
             let message = document.createElement("p");
             message.id = "ausgabe";
@@ -71,9 +91,9 @@
             message.appendChild(text);
             form.appendChild(message);
         }
-     }
+    }
 
-     let clearForm = () => {
+    let clearForm = () => {
         allElements.forEach(i => {
             if (i.type === "submit" || i.type === "reset")
                 return; //reset und submit button sollen nicht geleert werden
