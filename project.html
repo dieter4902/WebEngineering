@@ -1,26 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>BEST ANIMALS</title>
-    <link rel="stylesheet" href="styles/project.css">
-    <meta name="viewport" content="width=divice-width">
-    <script src="js/project.js" defer></script>
+    <title>Projekt</title>
+    <link rel="stylesheet" href="styles/style5.css">
+    <script src="js/proj.js" defer></script>
 </head>
-
 <body>
+<div id="formDiv">
+    <button id="login">login</button>
+    <form id="form">
+        <fieldset><
+            <legend>Tier</legend>
+            <label for="lieblingsAffe">Lieblings-Affe:</label>
+            <textarea id="lieblingsAffe" required></textarea>
+            <label for="lieblingstier">Lieblingstier:</label>
+            <input id="lieblingstier" type="text" required pattern="[A-Za-zÄÖÜäöüß]+">
+
+        </fieldset>
+        <fieldset>
+            <legend>Zur Person</legend>
+            <label for="name">Name:</label>
+            <input id="name" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
+
+            <label for="alter">Alter:</label>
+            <input id="alter" type="number" min="0" required pattern="[/d]+">
+
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
+
+            <label for="agb">AGB gelesen und akzeptiert?</label>
+            <input id="agb" type="checkbox" required>
+
+            <label for="gender">Geschlecht:</label>
+            <select name="gen" id="gender" multiple required>
+                <option value="m">m</option>
+                <option value="f">w</option>
+                <option value="other">anderes</option>
+            </select>
+
+            <label for="mentalAge">Geistiges Alter</label>
+            <input id="mentalAge" type="range" min="1" max="100" value="50">
+
+            <label for="fColor">Beste Farbe:</label>
+            <input id="fColor" type="color">
+        </fieldset>
+
+        <fieldset>
+            <legend>Bestes Haustier:</legend>
+
+            <label for="fHAnimal">Bestes Haustier:</label>
+            <input id="fHAnimal" list="animals" required pattern="[A-Za-zÄÖÜäöüß]+">
+            <datalist id="animals">
+                <option value="Katze">
+                <option value="Hund">
+            </datalist>
+
+        </fieldset>
+
+        <fieldset>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
+            <button type="button" id="btn">check password</button>
+            <p id="passwordMessage"></p>
+            <img id="passwordPicture">
+        </fieldset>
+        <fieldset>
+            <legend>Abschicken</legend>
+            <input id="submit" type="submit">
+            <input id="reset" type="reset">
+        </fieldset>
+    </form>
+</div>
+<div id="loginDiv">
+    <button id="register">register</button>
     <h1>Best animals</h1>
     <nav>
         <ul>
-            <li><a href="#porpoise">Porpoises</a></li>
+            <li><a href="#porp">Porpoises</a></li>
             <li><a href="#chonk">Cats</a></li>
-            <li><a href="#monkey">Monkeys</a></li>
-            <li><a href="#form">Quiz</a></li>
+            <li><a href="#MONKE">Monkeys</a></li>
         </ul>
     </nav>
     <main>
-        <article id="porpoise">
+        <article id="porp">
             <H2>Porpoises</H2>
             <a href="https://en.wikipedia.org/wiki/Porpoise">
                 <img src="img/porpoises.jpg" alt="mighty chonka Porpoise">
@@ -111,12 +174,12 @@
                 extinction of entire bird, mammal, and reptile species.
             </p>
         </article>
-        <article id="monkey">
+        <article id="MONKE">
             <H2>Monkeys</H2>
             <iframe src="https://www.youtube-nocookie.com/embed/T78nq62aQgM" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             <p>Return to Monke encompasses a series of memes closely associated with anarcho-primitivism that
                 romanticize
                 simplistic archaic lifestyle, with apes (often referred to as monkeys or monkes) serving as a symbolic
@@ -127,69 +190,8 @@
             </p>
         </article>
 
-        <form id="form">
-            <fieldset>
-                <legend>Tier</legend>
-                <label for="lieblingsAffe">Lieblings-Affe:</label>
-                <textarea id="lieblingsAffe" required></textarea>
-                <label for="lieblingstier">Lieblingstier:</label>
-                <input id="lieblingstier" type="text" required pattern="[A-Za-zÄÖÜäöüß]+">
-    
-            </fieldset>
-            <fieldset>
-                <legend>Zur Person</legend>
-                <label for="name">Name:</label>
-                <input id="name" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
-    
-                <label for="alter">Alter:</label>
-                <input id="alter" type="number" min="0" required pattern="[/d]+">
-    
-                <label for="email">E-mail:</label>
-                <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
-    
-                <label for="agb">AGB gelesen und akzeptiert?</label>
-                <input id="agb" type="checkbox" required>
-    
-                <label for="gender">Geschlecht:</label>
-                <select name="gen" id="gender" multiple required>
-                    <option value="m">m</option>
-                    <option value="f">w</option>
-                    <option value="other">anderes</option>
-                </select>
-    
-                <label for="mentalAge">Geistiges Alter</label>
-                <input id="mentalAge" type="range" min="1" max="100" value="50">
-    
-                <label for="fColor">Beste Farbe:</label>
-                <input id="fColor" type="color">
-            </fieldset>
-    
-            <fieldset>
-                <legend>Bestes Haustier:</legend>
-    
-                <label for="fHAnimal">Bestes Haustier:</label>
-                <input id="fHAnimal" list="animals" required pattern="[A-Za-zÄÖÜäöüß]+">
-                <datalist id="animals">
-                    <option value="Katze">
-                    <option value="Hund">
-                </datalist>
-    
-            </fieldset>
-    
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
-                <button type="button" id="btn">check password</button>
-                <p id="passwordMessage"></p>
-                <img id="passwordPicture">
-            </fieldset>
-            <fieldset>
-                <legend>Abschicken</legend>
-                <input id="submit" type="submit">
-                <input id="reset" type="reset">
-            </fieldset>
-        </form>
     </main>
-</body>
+</div>
 
+</body>
 </html>
