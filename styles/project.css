@@ -2,6 +2,13 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.2;
+
+}
+
+body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 h1 {
@@ -23,6 +30,12 @@ h3 {
 p {
     font-size: 1.2rem;
 }
+main{
+    margin: 111;
+    padding: 0;
+}
+
+
 
 img, iframe {
     max-width: 100%;
@@ -30,6 +43,8 @@ img, iframe {
 }
 
 #menu {
+    padding-left: 1%;
+    padding-right: 1%;
     display: grid;
     grid-template-columns: repeat(auto-fill, 50%);
     align-items: center;
@@ -40,6 +55,6 @@ img, iframe {
 }
 
 #search{
-    width: 20em;
+    width: 15em;
     justify-self: end;
 }
