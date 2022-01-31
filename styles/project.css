@@ -28,3 +28,12 @@ img, iframe {
     max-width: 100%;
     height: auto; /*to preserve the aspect ratio of the image*/
 }
+/*Wir müssen hier ein Grid nehmen im Grid eine FlexBox machen, in der FlexBox die Buttons auf der anderen Seite des Grids die Search*/
+#menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: aquamarine;
+    gap : 2%;
+    height: 5em;
+}
