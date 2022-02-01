@@ -2,7 +2,7 @@
     "use strict";
 
     let formDiv = document.getElementById("formDiv");
-    let loginDiv = document.getElementById("loginDiv");
+    let loginDiv = document.getElementById("page");
     toggle();
 
 

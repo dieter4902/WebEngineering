@@ -36,12 +36,21 @@ img, iframe {
     height: auto; /*to preserve the aspect ratio of the image*/
 }
 
+nav>ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    gap: 10%;
+}
+
 #menu {
-    margin-bottom: 16px;
+    margin-bottom: 1%;
     padding-left: 1%;
     padding-right: 1%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 50%);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     background-color: aqua;
     height: 3em;
@@ -50,24 +59,19 @@ img, iframe {
     border-bottom: thin ridge black;
 }
 
+a {
+    font-weight: 550;
+    color: inherit;
+    text-decoration: none;
+}
+
 #search{
     width: 15em;
     justify-self: end;
 }
 
 /* grid machen und dann zwei unterschiedlich fette columns und in der ersten row nav und allgemeine Site Beschreibung */
-/* #navandmain {
-    display: grid;
-    grid-template-rows: 3;
-    grid-gap: 10px;
+main {
     margin-left: 16px;
     margin-right: 16px;
-} */
-
-#nav{
-    grid-column: 1;
-}
-
-#porp{
-    grid-column: 1;
 }
