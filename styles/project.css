@@ -37,6 +37,7 @@ img, iframe {
 }
 
 #menu {
+    margin-bottom: 16px;
     padding-left: 1%;
     padding-right: 1%;
     display: grid;
@@ -46,9 +47,26 @@ img, iframe {
     height: 3em;
     position: sticky;
     top: 0;
+    border-bottom: thin ridge black;
 }
 
 #search{
     width: 15em;
     justify-self: end;
+}
+/* grid machen und dann zwei unterschiedlich fette columns und in der ersten row nav und allgemeine Site Beschreibung */
+#navandmain {
+    display: grid;
+    grid-template-rows: 3;
+    grid-gap: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#nav{
+    grid-column: 1;
+}
+
+#porp{
+    grid-column: 1;
 }

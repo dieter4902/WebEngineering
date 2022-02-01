@@ -7,73 +7,7 @@
     <link rel="stylesheet" href="styles/project.css">
     <script src="js/project.js" defer></script>
 </head>
-
 <body>
-    <div id="formDiv">
-        <button id="login">login</button>
-        <form id="form">
-            <fieldset>
-                <legend>Tier</legend>
-                <label for="lieblingsAffe">Lieblings-Affe:</label>
-                <textarea id="lieblingsAffe" required></textarea>
-                <label for="lieblingstier">Lieblingstier:</label>
-                <input id="lieblingstier" type="text" required pattern="[A-Za-zÄÖÜäöüß]+">
-
-            </fieldset>
-            <fieldset>
-                <legend>Zur Person</legend>
-                <label for="name">Name:</label>
-                <input id="name" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
-
-                <label for="alter">Alter:</label>
-                <input id="alter" type="number" min="0" required pattern="[/d]+">
-
-                <label for="email">E-mail:</label>
-                <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
-
-                <label for="agb">AGB gelesen und akzeptiert?</label>
-                <input id="agb" type="checkbox" required>
-
-                <label for="gender">Geschlecht:</label>
-                <select name="gen" id="gender" multiple required>
-                    <option value="m">m</option>
-                    <option value="f">w</option>
-                    <option value="other">anderes</option>
-                </select>
-
-                <label for="mentalAge">Geistiges Alter</label>
-                <input id="mentalAge" type="range" min="1" max="100" value="50">
-
-                <label for="fColor">Beste Farbe:</label>
-                <input id="fColor" type="color">
-            </fieldset>
-
-            <fieldset>
-                <legend>Bestes Haustier:</legend>
-
-                <label for="fHAnimal">Bestes Haustier:</label>
-                <input id="fHAnimal" list="animals" required pattern="[A-Za-zÄÖÜäöüß]+">
-                <datalist id="animals">
-                    <option value="Katze">
-                    <option value="Hund">
-                </datalist>
-
-            </fieldset>
-
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
-                <button type="button" id="btn">check password</button>
-                <p id="passwordMessage"></p>
-                <img id="passwordPicture">
-            </fieldset>
-            <fieldset>
-                <legend>Abschicken</legend>
-                <input id="submit" type="submit">
-                <input id="reset" type="reset">
-            </fieldset>
-        </form>
-    </div>
     <div id="loginDiv">
         <article id="menu">
             <article id="login">
@@ -82,8 +16,9 @@
             </article>
             <input id="search" type="text" value="Search" pattern="[A-Za-zÄÖÜäöüß]+">
         </article>
-
+    </div>
         <h1>Best animals</h1>
+        <div id="navandmain">
         <nav>
             <ul>
                 <li><a href="#porp">Porpoises</a></li>
@@ -216,10 +151,74 @@
                     Product.
                 </p>
             </article>
-
         </main>
     </div>
+    
+    <div id="formDiv">
+        <button id="login">login</button>
+        <form id="form">
+            <fieldset>
+                <legend>Tier</legend>
+                <label for="lieblingsAffe">Lieblings-Affe:</label>
+                <textarea id="lieblingsAffe" required></textarea>
+                <label for="lieblingstier">Lieblingstier:</label>
+                <input id="lieblingstier" type="text" required pattern="[A-Za-zÄÖÜäöüß]+">
 
+            </fieldset>
+            <fieldset>
+                <legend>Zur Person</legend>
+                <label for="name">Name:</label>
+                <input id="name" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
+
+                <label for="alter">Alter:</label>
+                <input id="alter" type="number" min="0" required pattern="[/d]+">
+
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
+
+                <label for="agb">AGB gelesen und akzeptiert?</label>
+                <input id="agb" type="checkbox" required>
+
+                <label for="gender">Geschlecht:</label>
+                <select name="gen" id="gender" multiple required>
+                    <option value="m">m</option>
+                    <option value="f">w</option>
+                    <option value="other">anderes</option>
+                </select>
+
+                <label for="mentalAge">Geistiges Alter</label>
+                <input id="mentalAge" type="range" min="1" max="100" value="50">
+
+                <label for="fColor">Beste Farbe:</label>
+                <input id="fColor" type="color">
+            </fieldset>
+
+            <fieldset>
+                <legend>Bestes Haustier:</legend>
+
+                <label for="fHAnimal">Bestes Haustier:</label>
+                <input id="fHAnimal" list="animals" required pattern="[A-Za-zÄÖÜäöüß]+">
+                <datalist id="animals">
+                    <option value="Katze">
+                    <option value="Hund">
+                </datalist>
+
+            </fieldset>
+
+            <fieldset>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
+                <button type="button" id="btn">check password</button>
+                <p id="passwordMessage"></p>
+                <img id="passwordPicture">
+            </fieldset>
+            <fieldset>
+                <legend>Abschicken</legend>
+                <input id="submit" type="submit">
+                <input id="reset" type="reset">
+            </fieldset>
+        </form>
+    </div>
 </body>
 
 </html>
