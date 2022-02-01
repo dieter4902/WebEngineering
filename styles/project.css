@@ -54,14 +54,15 @@ img, iframe {
     width: 15em;
     justify-self: end;
 }
+
 /* grid machen und dann zwei unterschiedlich fette columns und in der ersten row nav und allgemeine Site Beschreibung */
-#navandmain {
+/* #navandmain {
     display: grid;
     grid-template-rows: 3;
     grid-gap: 10px;
     margin-left: 16px;
     margin-right: 16px;
-}
+} */
 
 #nav{
     grid-column: 1;
