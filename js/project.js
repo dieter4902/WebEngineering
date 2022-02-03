@@ -1,8 +1,8 @@
 {
     "use strict";
 
-    let formDiv = document.getElementById("formDiv");
-    let loginDiv = document.getElementById("loginDiv");
+    let regDiv = document.getElementById("regDiv");
+    let logDiv = document.getElementById("logDiv");
     let mainDiv = document.getElementById("page");
 
     let loginButton = document.getElementById("login");
@@ -10,27 +10,39 @@
     let navTag = document.getElementById("nav");
     let search = document.getElementById("search");
 
-    let allElements = document.querySelectorAll("fieldset > input, fieldset > select");
+    let allElementsReg = regDiv.querySelectorAll("fieldset > input, fieldset > select");
+    let allElementsLog = logDiv.querySelectorAll("fieldset > input, fieldset > select");
 
     loginButton.addEventListener("click", function () {
+        logToMain();
     });
 
     registerButton.addEventListener("click", function () {
         regToMain();
     });
 
+    function logToMain() {
+        registerButton.hidden = !registerButton.hidden;
+        mainDiv.hidden = !mainDiv.hidden;
+        logDiv.hidden = !logDiv.hidden;
+        search.hidden = !search.hidden;
+        navTag.hidden = !navTag.hidden;
+        loginButton.textContent = loginButton.textContent == "Login" ? "Back" : "Login";
+    }
+
     function regToMain() {
         loginButton.hidden = !loginButton.hidden;
         mainDiv.hidden = !mainDiv.hidden;
-        formDiv.hidden = !formDiv.hidden;
+        regDiv.hidden = !regDiv.hidden;
         search.hidden = !search.hidden;
         navTag.hidden = !navTag.hidden;
         registerButton.textContent = registerButton.textContent == "Register" ? "Back" : "Register";
     }
+
     let passwordButton = document.getElementById("btn");
     passwordButton.addEventListener("click", function () {
         console.clear();
-        const passwd = document.getElementById("password");
+        const passwd = document.getElementById("regPassword");
         if (passwd.validity.valid) {
             console.log(passwd.value);
         } else {
@@ -38,9 +50,9 @@
         }
     });
 
-    let printValidValueElements = () => {
+    let printValidValueElements = (div) => {
         let check = true;
-        allElements.forEach(i => {
+        div.forEach(i => {
             if (i.value !== undefined && i.value !== "" && i.value != null) {
                 if (i.validity.valid) {
                     console.log(i.id + ": " + i.value);
@@ -59,14 +71,8 @@
         return check;
     };
 
-
-    let accounts = [{
-        name : "Gast",
-        password : "gast"
-    }];
-
-    let clearForm = () => {
-        allElements.forEach(i => {
+    let clearForm = (div) => {
+        div.forEach(i => {
             if (i.type === "checkbox") {
                 i.checked = false;
                 return;
@@ -75,28 +81,42 @@
         });
     }
 
-    let submitButton = formDiv.querySelector("[type=submit]");
+    function Account(name, password) {
+        this.name = name;
+        this.password = password;
+        this.equals = function (other) {
+            return other.name == this.name && other.password == this.password;
+        };
+    }
+
+    let accounts = [new Account("Gast", "gast")];
+
+    let submitButton = regDiv.querySelector("[type=submit]");
     submitButton.addEventListener("click", function (event) {
         console.clear();
-        if (printValidValueElements() === false) {
-        } else {
-            accounts.push({
-                name: document.getElementById("name").value,
-                password: document.getElementById("password").value
-            });
-            clearForm();
+        if (printValidValueElements(allElementsReg) === true) {
+            accounts.push(new Account(document.getElementById("regName").value, document.getElementById("regPassword").value));
+            clearForm(allElementsReg);
             regToMain();
         }
         event.preventDefault();
         console.log(accounts);
     }, false);
 
-/*     let loginButton = loginDiv.querySelector("[type=submit]");
-    submitButton.addEventListener("click", function (event) {
+    let logButton = logDiv.querySelector("[type=submit]");
+    logButton.addEventListener("click", function (event) {
         console.clear();
-        if (printValidValueElements() === false) {
-            event.preventDefault();
+        let user = new Account(document.getElementById("logName").value, document.getElementById("logPassword").value);
+        for (let item of accounts) {
+            if (item.equals(user)) {
+                clearForm(allElementsLog);
+                logToMain();
+                break;
+            }
         }
-    }, false); */
+        event.preventDefault();
+    }, false);
+
+
 
 }

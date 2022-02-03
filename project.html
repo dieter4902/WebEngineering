@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -152,40 +152,52 @@
         </article>
     </main>
 </div>
-<div id="formDiv" hidden = true>
-    <form id="form">
+<div id="regDiv" hidden = true>
+    <form id="formReg">
         <fieldset>
             <legend>Zur Person</legend>
-            <label for="name">Name:</label>
-            <input id="name" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
+            <label for="regName">Name:</label>
+            <input id="regName" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
 
-            <label for="alter">Alter:</label>
-            <input id="alter" type="number" min="0" required pattern="[/d]+">
+            <label for="age">Alter:</label>
+            <input id="age" type="number" min="0" required pattern="[/d]+">
 
             <label for="email">E-mail:</label>
             <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
 
-            <label for="agb">AGB gelesen und akzeptiert?</label>
+            <label for="agb">Read and accept Conditions?</label>
             <input id="agb" type="checkbox" required>
 
-            <label for="gender">Geschlecht:</label>
+            <label for="gender">Gender:</label>
             <select name="gen" id="gender" multiple required>
                 <option value="m">m</option>
-                <option value="f">w</option>
-                <option value="other">anderes</option>
+                <option value="f">f</option>
+                <option value="other">other</option>
             </select>
         </fieldset>
         <fieldset>
-            <label for="password">Password:</label>
-            <input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
+            <label for="regPassword">Password:</label>
+            <input type="regPassword" id="regPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
             <button type="button" id="btn">check password</button>
             <p id="passwordMessage"></p>
             <img id="passwordPicture">
         </fieldset>
-        <input id="submit" type="submit">
-        <input id="reset" type="reset">
+        <input id="regSubmit" value ="Create Account" type="submit">
+        <input id="regReset" type="reset">
+    </form>
+</div>
+<div id="logDiv" hidden = true>
+    <form id="formLog">
+        <fieldset>
+            <legend>Anmeldung</legend>
+            <label for="logName">Name:</label>
+            <input id="logName" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
+            <label for="logPassword">Password:</label>
+            <input type="password" id="logPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
+        </fieldset>
+        <input id="regSubmit" value ="Login" type="submit">
+        <input id="regReset" type="reset">
     </form>
 </div>
 </body>
-
 </html>
