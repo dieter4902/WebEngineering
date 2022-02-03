@@ -61,6 +61,7 @@ main {
 @media all and (min-width: 641px) {
 
     #menu {
+        height: 60px;
         margin-bottom: 1%;
         padding-left: 1%;
         padding-right: 1%;
@@ -68,7 +69,6 @@ main {
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
         background-color: aqua;
-        height: 3%;
         position: sticky;
         top: 0;
         border-bottom: thin ridge black;
