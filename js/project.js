@@ -3,22 +3,27 @@
 
     let formDiv = document.getElementById("formDiv");
     let loginDiv = document.getElementById("page");
+    let loginButton = document.getElementById("login");
+
+    loginButton.style.margin = "14.5px";
+
+    let registerButton = document.getElementById("register");
+    let navTag = document.getElementById("nav");
     toggle();
 
-
-    let loginButton = document.querySelector("[id=login]");
     loginButton.addEventListener("click", function () {
         toggle();
     });
-
-    let registerButton = document.querySelector("[id=register]");
     registerButton.addEventListener("click", function () {
         toggle();
     });
 
     function toggle() {
-        formDiv.hidden = !formDiv.hidden;
-        loginDiv.hidden = !formDiv.hidden;
+        registerButton.hidden = !registerButton.hidden;
+        loginDiv.hidden = registerButton.hidden;
+        formDiv.hidden = !registerButton.hidden;
+        loginButton.hidden = !registerButton.hidden;
+        navTag.hidden = registerButton.hidden;
     }
 
     let allElements = document.querySelectorAll("input,textarea,select");
