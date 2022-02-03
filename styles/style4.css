@@ -68,22 +68,9 @@ ul {
 
 @media all and (min-width: 541px) {
     main {
-        grid-template-areas:
-            "item1 item2 item3";
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
         padding-top: 10px;
-    }
-
-    #porp {
-        grid-area: item1;
-    }
-
-    #chonk {
-        grid-area: item2;
-    }
-
-    #MONKE {
-        grid-area: item3;
     }
 }
 
