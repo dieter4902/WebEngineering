@@ -2,31 +2,31 @@
     "use strict";
 
     let formDiv = document.getElementById("formDiv");
-    let loginDiv = document.getElementById("page");
+    let loginDiv = document.getElementById("loginDiv");
+    let mainDiv = document.getElementById("page");
+
     let loginButton = document.getElementById("login");
     let registerButton = document.getElementById("register");
     let navTag = document.getElementById("nav");
     let search = document.getElementById("search");
 
+    let allElements = document.querySelectorAll("fieldset > input, fieldset > select");
+
     loginButton.addEventListener("click", function () {
-        loginButton.textContent = "Login";
     });
 
     registerButton.addEventListener("click", function () {
-        toggle();
-        loginButton.textContent = "Back";
+        regToMain();
     });
 
-    function toggle() {
-        loginButton.hidden = !registerButton.hidden;
-        loginDiv.hidden = !loginDiv.hidden;
+    function regToMain() {
+        loginButton.hidden = !loginButton.hidden;
+        mainDiv.hidden = !mainDiv.hidden;
         formDiv.hidden = !formDiv.hidden;
         search.hidden = !search.hidden;
         navTag.hidden = !navTag.hidden;
+        registerButton.textContent = registerButton.textContent == "Register" ? "Back" : "Register";
     }
-
-    let allElements = document.querySelectorAll("fieldset > input, fieldset > select");
-    console.log(allElements);
     let passwordButton = document.getElementById("btn");
     passwordButton.addEventListener("click", function () {
         console.clear();
@@ -59,13 +59,44 @@
         return check;
     };
 
-    let submitButton = document.querySelector("[type=submit]");
+
+    let accounts = [{
+        name : "Gast",
+        password : "gast"
+    }];
+
+    let clearForm = () => {
+        allElements.forEach(i => {
+            if (i.type === "checkbox") {
+                i.checked = false;
+                return;
+            }
+            i.value = "";
+        });
+    }
+
+    let submitButton = formDiv.querySelector("[type=submit]");
+    submitButton.addEventListener("click", function (event) {
+        console.clear();
+        if (printValidValueElements() === false) {
+        } else {
+            accounts.push({
+                name: document.getElementById("name").value,
+                password: document.getElementById("password").value
+            });
+            clearForm();
+            regToMain();
+        }
+        event.preventDefault();
+        console.log(accounts);
+    }, false);
+
+/*     let loginButton = loginDiv.querySelector("[type=submit]");
     submitButton.addEventListener("click", function (event) {
         console.clear();
         if (printValidValueElements() === false) {
             event.preventDefault();
         }
-    }, false);
-
+    }, false); */
 
 }
