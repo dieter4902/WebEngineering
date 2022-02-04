@@ -48,29 +48,25 @@
         const passwdPics = ["img/bad.png", "img/good.png", "img/cool.png"]
         if (passwd.validity.valid) {
             if(entropy<50) {
-                createDOM(passwordfield, passwdPics[1], "Gutes Passwort!");
+                createPwDOM(passwordfield, passwdPics[1], "Gutes Passwort!");
             } else {
-                createDOM(passwordfield, passwdPics[2], "Sehr gutes Passwort!");
+                createPwDOM(passwordfield, passwdPics[2], "Sehr gutes Passwort!");
             }
             console.log("Passwort: " + passwd.value + " Länge: " + passwd.value.length + " Entropy: " + entropy);
         } else {
-            createDOM(passwordfield, passwdPics[0], "Schlechtes Passwort!");
+            createPwDOM(passwordfield, passwdPics[0], "Schlechtes Passwort!");
             console.log("schlechtes Passwort");
         }
     });
 
-    let createDOM = (parent, pic, ausgabe) => {
-        console.log(parent);
+    let createPwDOM = (parent, pic, ausgabe) => {
         if(parent.lastChild.id === "ausgabe") {
-            parent.getElementById("ausgabe");
-            parent.getElementById("passwordpic").src = pic;
+            document.getElementById("passwordpic").src = pic;
             parent.lastChild.lastChild.textContent = ausgabe;
-          /*   form.lastChild.appendChild(text); */
         } else {
             let passwordpic = document.createElement("img");
             passwordpic.src = pic;
             passwordpic.id = "passwordpic"
-            let a= document.getElementById("passwordpic");
             let message = document.createElement("p");
             message.id = "ausgabe";
             let text = document.createTextNode(ausgabe);
