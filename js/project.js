@@ -42,7 +42,7 @@
     let passwordButton = document.getElementById("btn");
     passwordButton.addEventListener("click", function () {
         console.clear();
-        let passwordfield = document.getElementById("password");
+        const passwordfield = document.getElementById("password");
         const passwd = document.getElementById("regPassword");
         const entropy = Math.log2(Math.pow(62, passwd.value.length));
         const passwdPics = ["img/bad.png", "img/good.png", "img/cool.png"]
