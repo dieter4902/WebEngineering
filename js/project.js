@@ -37,7 +37,7 @@
         registerButton.textContent = registerButton.textContent === "Register" ? "Back" : "Register";
     }
 
-    function toggle(){
+    function toggle() {
         mainDiv.hidden = !mainDiv.hidden;
         search.hidden = !search.hidden;
         navTag.hidden = !navTag.hidden;
@@ -51,7 +51,7 @@
         const entropy = Math.log2(Math.pow(62, passwd.value.length));
         const passwdPics = ["img/bad.png", "img/good.png", "img/cool.png"]
         if (passwd.validity.valid) {
-            if(entropy<50) {
+            if (entropy < 50) {
                 createPwDOM(passwordfield, passwdPics[1], "Gutes Passwort!");
             } else {
                 createPwDOM(passwordfield, passwdPics[2], "Sehr gutes Passwort!");
@@ -64,7 +64,7 @@
     });
 
     let createPwDOM = (parent, pic, ausgabe) => {
-        if(parent.lastChild.id === "ausgabe") {
+        if (parent.lastChild.id === "ausgabe") {
             document.getElementById("passwordpic").src = pic;
             parent.lastChild.lastChild.textContent = ausgabe;
         } else {
@@ -78,7 +78,7 @@
             parent.appendChild(passwordpic);
             parent.appendChild(message);
         }
-     }
+    }
 
     let printValidValueElements = (div) => {
         let check = true;
@@ -147,4 +147,22 @@
         }
         event.preventDefault();
     }, false);
+
+    search.addEventListener("keypress", function (event) {
+        if (event.key = "Enter") {
+            if (search.value === "katzen") {
+                document.getElementById("katzen").scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else if (String.prototype.toLowerCase(search.value) === "wale") {
+                document.getElementById("wale").scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else if (String.prototype.toLowerCase(search.value) === "affen") {
+                document.getElementById("affen").scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    })
 }
