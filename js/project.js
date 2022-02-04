@@ -154,11 +154,11 @@
                 document.getElementById("katzen").scrollIntoView({
                     behavior: 'smooth'
                 });
-            } else if (String.prototype.toLowerCase(search.value) === "wale") {
+            } else if (search.value === "wale") {
                 document.getElementById("wale").scrollIntoView({
                     behavior: 'smooth'
                 });
-            } else if (String.prototype.toLowerCase(search.value) === "affen") {
+            } else if (search.value === "affen") {
                 document.getElementById("affen").scrollIntoView({
                     behavior: 'smooth'
                 });
