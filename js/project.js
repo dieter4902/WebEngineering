@@ -42,13 +42,43 @@
     let passwordButton = document.getElementById("btn");
     passwordButton.addEventListener("click", function () {
         console.clear();
+        let passwordfield = document.getElementById("password");
         const passwd = document.getElementById("regPassword");
+        const entropy = Math.log2(Math.pow(62, passwd.value.length));
+        const passwdPics = ["img/bad.png", "img/good.png", "img/cool.png"]
         if (passwd.validity.valid) {
-            console.log(passwd.value);
+            if(entropy<50) {
+                createDOM(passwordfield, passwdPics[1], "Gutes Passwort!");
+            } else {
+                createDOM(passwordfield, passwdPics[2], "Sehr gutes Passwort!");
+            }
+            console.log("Passwort: " + passwd.value + " Länge: " + passwd.value.length + " Entropy: " + entropy);
         } else {
-            console.log("bad password");
+            createDOM(passwordfield, passwdPics[0], "Schlechtes Passwort!");
+            console.log("schlechtes Passwort");
         }
     });
+
+    let createDOM = (parent, pic, ausgabe) => {
+        console.log(parent);
+        if(parent.lastChild.id === "ausgabe") {
+            parent.getElementById("ausgabe");
+            parent.getElementById("passwordpic").src = pic;
+            parent.lastChild.lastChild.textContent = ausgabe;
+          /*   form.lastChild.appendChild(text); */
+        } else {
+            let passwordpic = document.createElement("img");
+            passwordpic.src = pic;
+            passwordpic.id = "passwordpic"
+            let a= document.getElementById("passwordpic");
+            let message = document.createElement("p");
+            message.id = "ausgabe";
+            let text = document.createTextNode(ausgabe);
+            message.appendChild(text);
+            parent.appendChild(passwordpic);
+            parent.appendChild(message);
+        }
+     }
 
     let printValidValueElements = (div) => {
         let check = true;
@@ -110,6 +140,7 @@
         for (let item of accounts) {
             if (item.equals(user)) {
                 clearForm(allElementsLog);
+                document.getElementById("chonkers").hidden = false;
                 logToMain();
                 break;
             }
