@@ -86,4 +86,21 @@ main {
 
 }
 
-@media all and (max-width: 640px) {}
+@media all and (max-width: 640px) {
+
+    fieldset{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+    
+    #submitAndReset{
+        display: flex;
+        flex-flow: row wrap;
+        align-content: stretch;
+    }
+
+    #agb{
+        align-self: flex-start;
+    }
+}

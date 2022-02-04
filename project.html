@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
         <h1>Beste Tiere</h1>
         <main>
             <article id="wale">
-                <H2>Porpoises</H2>
+                <H2>Schweinswale</H2>
                 <a href="https://en.wikipedia.org/wiki/Porpoise">
                     <img src="img/porpoises.jpg" alt="mighty chonka Porpoise">
                 </a>
@@ -100,8 +100,7 @@
                 <iframe src="https://www.youtube-nocookie.com/embed/T78nq62aQgM" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    alt="Life could be a Dream with Apes"></iframe>
+                    allowfullscreen alt="Life could be a Dream with Apes"></iframe>
                 <p>
                     Return to Monke umfasst eine Reihe von Memes, die eng mit dem Anarcho-Primitivismus verbunden sind
                     und einen vereinfachten archaischen Lebensstil romantisieren, wobei Affen als symbolische
@@ -110,8 +109,10 @@
                     „Reject Modernity“, „Return to Tradition “ und „Consume Product“ verbunden.
                 </p>
             </article>
-            <article id="chonkers"hidden >
-                <iframe src="chonkytopia.html" scrolling="no" onload='(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;"></iframe>
+            <article id="chonkers" hidden>
+                <iframe src="chonkytopia.html" scrolling="no"
+                    onload='(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
+                    style="height:200px;width:100%;border:none;overflow:hidden;"></iframe>
             </article>
         </main>
     </div>
@@ -128,7 +129,7 @@
                 <label for="email">E-mail:</label>
                 <input id="email" type="email" required pattern=".+@[A-z0-9]+.[A-z]+">
 
-                <label for="agb">Read and accept Conditions?</label>
+                <label for="agb">AGBs gelesen und akzeptiert?</label>
                 <input id="agb" type="checkbox" required>
 
                 <label for="gender">Gender:</label>
@@ -138,14 +139,16 @@
                     <option value="other">other</option>
                 </select>
             </fieldset>
-            <fieldset id ="password">
-                <label for="regPassword">Password:</label>
+            <fieldset id="password">
+                <label for="regPassword">Passwort:</label>
                 <input type="regPassword" id="regPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
-                <button type="button" id="btn">check password</button>
+                <button type="button" id="btn">Passwort überprüfen</button>
                 <br>
             </fieldset>
-            <input id="regSubmit" value="Create Account" type="submit">
-            <input id="regReset" type="reset">
+            <div id="submitAndReset">
+                <input id="regSubmit" value="Create Account" type="submit">
+                <input id="regReset" type="reset">
+            </div>
         </form>
     </div>
     <div id="logDiv" hidden>
@@ -154,7 +157,7 @@
                 <legend>Anmeldung</legend>
                 <label for="logName">Name:</label>
                 <input id="logName" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
-                <label for="logPassword">Password:</label>
+                <label for="logPassword">Passwort:</label>
                 <input type="password" id="logPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
             </fieldset>
             <input id="regSubmit" value="Login" type="submit">
