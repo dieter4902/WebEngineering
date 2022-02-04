@@ -141,7 +141,7 @@
             </fieldset>
             <fieldset id="password">
                 <label for="regPassword">Passwort:</label>
-                <input type="regPassword" id="regPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
+                <input type="password" id="regPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
                 <button type="button" id="btn">Passwort überprüfen</button>
                 <br>
             </fieldset>
@@ -152,17 +152,19 @@
         </form>
     </div>
     <div id="logDiv" hidden>
-        <form id="formLog">
-            <fieldset>
-                <legend>Anmeldung</legend>
-                <label for="logName">Name:</label>
-                <input id="logName" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
-                <label for="logPassword">Passwort:</label>
-                <input type="password" id="logPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
-            </fieldset>
-            <input id="regSubmit" value="Login" type="submit">
-            <input id="regReset" type="reset">
-        </form>
+        <div id="buttonAndField">
+            <form id="formLog">
+                <fieldset>
+                    <legend>Anmeldung</legend>
+                    <label for="logName">Name:</label>
+                    <input id="logName" type="text" required pattern="[A-z0-9ÄÖÜäöüß]+">
+                    <label for="logPassword">Passwort:</label>
+                    <input type="password" id="logPassword" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}">
+                </fieldset>
+                <input id="logSubmit" value="Login" type="submit">
+                <input id="logReset" type="reset">
+            </form>
+        </div>
     </div>
 </body>
 
