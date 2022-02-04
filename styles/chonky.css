@@ -1,9 +1,9 @@
-main {
+div#chongites {
     display: grid;
 }
 
 @media all and (min-width: 1300px) {
-    main {
+    div#chongites {
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 10px;
         padding-top: 10px;
@@ -11,7 +11,7 @@ main {
 }
 
 @media all and (min-width: 700px) and (max-width: 1299px) {
-    main {
+    div#chongites {
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
         padding-top: 10px;
@@ -20,7 +20,7 @@ main {
 
 @media all and (max-width: 699px) {
 
-    main {
+    div#chongites {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, fit-content(1fr));
@@ -29,6 +29,19 @@ main {
     }
 }
 
-article {
+div#chongites > article {
+    margin: auto;
+}
+
+img, iframe {
+    max-width: 100%;
+    min-height: auto;
+    max-height: 50vh;
+}
+h1 {
+    font-size: 2rem;
+    width: 50%;
+    border: 1px solid;
+    text-align: center;
     margin: auto;
 }
