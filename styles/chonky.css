@@ -10,7 +10,7 @@ main {
     }
 }
 
-@media all and (min-width: 541px) and (max-width: 1299px) {
+@media all and (min-width: 700px) and (max-width: 1299px) {
     main {
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
@@ -18,7 +18,7 @@ main {
     }
 }
 
-@media all and (max-width: 540px) {
+@media all and (max-width: 699px) {
 
     main {
         display: grid;

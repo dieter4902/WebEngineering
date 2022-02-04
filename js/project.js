@@ -10,6 +10,8 @@
     let navTag = document.getElementById("nav");
     let search = document.getElementById("search");
 
+    let chonkerArticle = document.getElementById("chonkers");
+
     let allElementsReg = regDiv.querySelectorAll("fieldset > input, fieldset > select");
     let allElementsLog = logDiv.querySelectorAll("fieldset > input, fieldset > select");
 
@@ -23,20 +25,22 @@
 
     function logToMain() {
         registerButton.hidden = !registerButton.hidden;
-        mainDiv.hidden = !mainDiv.hidden;
         logDiv.hidden = !logDiv.hidden;
-        search.hidden = !search.hidden;
-        navTag.hidden = !navTag.hidden;
-        loginButton.textContent = loginButton.textContent == "Login" ? "Back" : "Login";
+        toggle();
+        loginButton.textContent = loginButton.textContent === "Login" ? "Back" : "Login";
     }
 
     function regToMain() {
         loginButton.hidden = !loginButton.hidden;
-        mainDiv.hidden = !mainDiv.hidden;
         regDiv.hidden = !regDiv.hidden;
+        toggle();
+        registerButton.textContent = registerButton.textContent === "Register" ? "Back" : "Register";
+    }
+
+    function toggle(){
+        mainDiv.hidden = !mainDiv.hidden;
         search.hidden = !search.hidden;
         navTag.hidden = !navTag.hidden;
-        registerButton.textContent = registerButton.textContent == "Register" ? "Back" : "Register";
     }
 
     let passwordButton = document.getElementById("btn");
@@ -111,7 +115,7 @@
         this.name = name;
         this.password = password;
         this.equals = function (other) {
-            return other.name == this.name && other.password == this.password;
+            return other.name === this.name && other.password === this.password;
         };
     }
 
@@ -136,14 +140,11 @@
         for (let item of accounts) {
             if (item.equals(user)) {
                 clearForm(allElementsLog);
-                document.getElementById("chonkers").hidden = false;
+                chonkerArticle.hidden = false;
                 logToMain();
                 break;
             }
         }
         event.preventDefault();
     }, false);
-
-
-
 }
