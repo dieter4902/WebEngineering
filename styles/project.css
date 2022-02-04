@@ -10,6 +10,7 @@
     font-size: 1rem;
     line-height: 1.2;
     --margin-main: 16px;
+    background-color: ghostwhite;
 }
 
 body {
@@ -71,7 +72,16 @@ main {
     margin-right: var(--margin-main);
 }
 
-
+#menu {
+    margin-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    display: grid;
+    background-color: darkcyan;
+    position: sticky;
+    top: 0;
+    border-bottom: thin ridge black;
+}
 
 @media all and (min-width: 641px) {
 
@@ -81,16 +91,9 @@ main {
 
     #menu {
         height: 60px;
-        margin-bottom: 1%;
-        padding-left: 1%;
-        padding-right: 1%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
-        background-color: aqua;
-        position: sticky;
-        top: 0;
-        border-bottom: thin ridge black;
     }
 
     nav>ul {
@@ -105,17 +108,9 @@ main {
 
     #menu {
         height: 8vh;
-        margin-bottom: 1%;
-        padding-left: 1%;
-        padding-right: 1%;
-        display: grid;
         grid-template-areas:
             "logAndReg search"
             "nav nav";
-        background-color: aqua;
-        position: sticky;
-        top: 0;
-        border-bottom: thin ridge black;
     }
 
     #logAndReg {
