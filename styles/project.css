@@ -95,9 +95,11 @@ main {
     }
     
     #submitAndReset{
+        width: 100%;
         display: flex;
+        flex: auto;
         flex-flow: row wrap;
-        align-content: stretch;
+        justify-content: stretch;
     }
 
     #agb{
