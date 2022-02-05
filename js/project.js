@@ -149,7 +149,7 @@
     }, false);
 
     search.addEventListener("keypress", function (event) {
-        if (event.key = "Enter") {
+        if (event.key === "Enter") {
             if (search.value === "katzen") {
                 document.getElementById("katzen").scrollIntoView({
                     behavior: 'smooth'
